@@ -1,0 +1,191 @@
+/*
+	@name registering_page
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: block; position: relative; width: 360px; width: 360px; height: 640px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+
+#_bg__registering_page {
+	top: 0px;
+	left: 0px;
+	width: 360px;
+	height: 640px;
+	background:rgba(197.62,193.78,193.78,1);
+}
+
+
+#enter_your_information_below {
+	top: 80px;
+	left: 13px;
+	width: 283px;
+	height: 59px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 24px;
+	text-align: center;
+	color:#050505;
+}
+
+
+#rectangle_5 {
+	top: 140px;
+	left: 32px;
+	width: 277px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_6 {
+	top: 208px;
+	left: 32px;
+	width: 277px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_7 {
+	top: 276px;
+	left: 32px;
+	width: 277px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_8 {
+	top: 344px;
+	left: 32px;
+	width: 277px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_9 {
+	top: 412px;
+	left: 32px;
+	width: 277px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#your_username {
+	top: 206px;
+	position:fixed;
+	width: 277px;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#3E3D3D;
+}
+
+
+#your_email {
+	top: 273px;
+	position:fixed;
+	width: 277px;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#3E3D3D;
+}
+
+
+#your_password {
+	top: 343px;
+	position: fixed;
+	width: 277px;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#3E3D3D;
+}
+
+
+#confirm_your_password {
+	top: 410px;
+	position: fixed;
+	width: 277px;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#3E3D3D;
+}
+
+
+#your_full_name {
+	top: 138px;
+	position: fixed;
+	width: 277px;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#3E3D3D;
+}
+
+
+#rectangle_5_ek1 {
+	top: 513px;
+	position:fixed;
+	left: 734px;
+	width: 235px;
+	height: 60px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	background:rgba(43.56,42.35,42.35,1);
+}
+
+
+#sign_up {
+	top: 510px;
+	left: 305px;
+	width: 235px;
+	height: 67px;
+	border: 1px solid #3E3D3D;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 32px;
+	text-align: center;
+	color:#FFFFFF;
+}
+
+
+#arrow_3 {
+	top: 29px;
+	position: fixed;
+	right: 990px;
+	width: 29px;
+	height: 0px;
+}
+
+
+
+/* Add your custom CSS here */

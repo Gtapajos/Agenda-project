@@ -1,0 +1,189 @@
+/*
+	@name login_page
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: block; position: relative; width: 360px; width: 360px; height: 640px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+
+#_bg__login_page {
+	top: 0px;
+	left: 0px;
+	width: 360px;
+	height: 640px;
+	background:rgba(197.62,193.78,193.78,1);
+}
+
+
+#rectangle_1 {
+	top: 66px;
+	left: 69px;
+	width: 224px;
+	height: 181px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#line_2 {
+	top: 156px;
+	left: 39px;
+	width: 283.77px;
+	height: 1px;
+	
+	-ms-transform:rotate(38.85deg);
+	-o-transform:rotate(38.85deg);
+	-webkit-transform:rotate(38.85deg);
+	-moz-transform:rotate(38.85deg);
+	transform:rotate(38.85deg);
+	background:#000000;
+}
+
+
+#line_1 {
+	top: 156px;
+	left: 37px;
+	width: 285.8px;
+	height: 1px;
+	
+	-ms-transform:rotate(-39.04deg);
+	-o-transform:rotate(-39.04deg);
+	-webkit-transform:rotate(-39.04deg);
+	-moz-transform:rotate(-39.04deg);
+	transform:rotate(-39.04deg);
+	background:#000000;
+}
+
+
+#agendly {
+	top: 256px;
+	left: 64px;
+	width: 243px;
+	height: 46px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 32px;
+	text-align: center;
+	color:#050505;
+}
+
+
+#the_agenda_made_for_everybody {
+	top: 296px;
+	left: 66px;
+	width: 237px;
+	height: 46px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#000000;
+}
+
+
+#rectangle_2 {
+	top: 387px;
+	left: 74px;
+	width: 214px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_3 {
+	top: 426px;
+	left: 74px;
+	width: 214px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#password {
+	top: 426px;
+	left: 74px;
+	width: 214px;
+	height: 31px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#3E3D3D;
+}
+
+
+#username {
+	top: 387px;
+	left:74px;
+	width: 214px;
+	height: 33px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#3E3D3D;
+}
+
+
+#rectangle_4 {
+	top: 484px;
+	left: 181px;
+	width: 110px;
+	height: 34px;
+	background:rgba(43.56,42.35,42.35,1);
+}
+
+
+#sign_in {
+	top: 489px;
+	left: 211px;
+	width: 110px;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	background-color: #3E3D3D;
+	border-color: #3E3D3D;
+	border-width: 1mm;
+	color:#FFFFFF;
+}
+
+
+#don_t_you_have_an_account {
+	top: 545px;
+	left: 60px;
+	width: 207px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 16px;
+	text-align: center;
+	color:#000000;
+}
+
+#sign_up {
+	top: 545px;
+	left: 908px;
+	position:fixed;
+	width: 50px;
+	height: 22px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 16px;
+	text-align: center;
+	color:#494848;
+}
+
+
+
+
+/* Add your custom CSS here */

@@ -1,0 +1,299 @@
+/*
+	@name user_s_informations_page
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: block; position: relative; width: 360px; width: 360px; height: 640px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+
+#_bg__user_s_informations_page {
+	top: 0px;
+	left: 0px;
+	width: 360px;
+	height: 640px;
+	background:rgba(197.62,193.78,193.78,1);
+}
+
+
+#personal_informations {
+	top: 61px;
+	left: 43px;
+	width: 283px;
+	height: 59px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 24px;
+	text-align: center;
+	color:#050505;
+}
+
+
+#rectangle_5 {
+	top: 153px;
+	left: 42px;
+	width: 277px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_6 {
+	top: 197px;
+	left: 42px;
+	width: 277px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_7 {
+	top: 241px;
+	left: 42px;
+	width: 277px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_8 {
+	top: 285px;
+	left: 42px;
+	width: 277px;
+	height: 31px;
+	border: 1px solid #000000;
+	background:rgba(217,217,217,1);
+}
+
+
+#bob {
+	top: 199px;
+	left: 113px;
+	width: 142px;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#000000;
+}
+
+
+#bobmusician_gmail_com {
+	top: 243px;
+	left: 75px;
+	width: 222px;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#000000;
+}
+
+
+#bob_dylan {
+	top: 157px;
+	left: 145px;
+	width: 80px;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#000000;
+}
+
+
+#rectangle_5_ek1 {
+	top: 364px;
+	left: 107px;
+	width: 157px;
+	height: 45px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	background:rgba(43.56,42.35,42.35,1);
+}
+
+
+#rectangle_9 {
+	top: 505px;
+	left: 107px;
+	width: 157px;
+	height: 45px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	background:rgba(43.56,42.35,42.35,1);
+}
+
+
+#update_data {
+	top: 372px;
+	left: 110px;
+	width: 157px;
+	height: 53px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#FFFFFF;
+}
+
+
+#delete_account {
+	top: 513px;
+	left: 110px;
+	width: 157px;
+	height: 53px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#FFFFFF;
+}
+
+
+#arrow_3 {
+	top: 29px;
+	left: 10px;
+	width: 29px;
+	height: 0px;
+}
+
+
+#ellipse_2 {
+	top: 294px;
+	left: 107px;
+	width: 10px;
+	height: 10px;
+	-ms-border-radius: 5px / 5px;
+	-o-border-radius: 5px / 5px;
+	-moz-border-radius: 5px / 5px;
+	-webkit-border-radius: 5px / 5px;
+	border-radius: 5px / 5px;
+	background:rgba(0,0,0,1);
+}
+
+
+#ellipse_3 {
+	top: 294px;
+	left: 128px;
+	width: 10px;
+	height: 10px;
+	-ms-border-radius: 5px / 5px;
+	-o-border-radius: 5px / 5px;
+	-moz-border-radius: 5px / 5px;
+	-webkit-border-radius: 5px / 5px;
+	border-radius: 5px / 5px;
+	background:rgba(0,0,0,1);
+}
+
+
+#ellipse_4 {
+	top: 294px;
+	left: 149px;
+	width: 10px;
+	height: 10px;
+	-ms-border-radius: 5px / 5px;
+	-o-border-radius: 5px / 5px;
+	-moz-border-radius: 5px / 5px;
+	-webkit-border-radius: 5px / 5px;
+	border-radius: 5px / 5px;
+	background:rgba(0,0,0,1);
+}
+
+
+#ellipse_5 {
+	top: 294px;
+	left: 170px;
+	width: 10px;
+	height: 10px;
+	-ms-border-radius: 5px / 5px;
+	-o-border-radius: 5px / 5px;
+	-moz-border-radius: 5px / 5px;
+	-webkit-border-radius: 5px / 5px;
+	border-radius: 5px / 5px;
+	background:rgba(0,0,0,1);
+}
+
+
+#ellipse_6 {
+	top: 294px;
+	left: 191px;
+	width: 10px;
+	height: 10px;
+	-ms-border-radius: 5px / 5px;
+	-o-border-radius: 5px / 5px;
+	-moz-border-radius: 5px / 5px;
+	-webkit-border-radius: 5px / 5px;
+	border-radius: 5px / 5px;
+	background:rgba(0,0,0,1);
+}
+
+
+#ellipse_7 {
+	top: 294px;
+	left: 212px;
+	width: 10px;
+	height: 10px;
+	-ms-border-radius: 5px / 5px;
+	-o-border-radius: 5px / 5px;
+	-moz-border-radius: 5px / 5px;
+	-webkit-border-radius: 5px / 5px;
+	border-radius: 5px / 5px;
+	background:rgba(0,0,0,1);
+}
+
+
+#ellipse_8 {
+	top: 294px;
+	left: 233px;
+	width: 10px;
+	height: 10px;
+	-ms-border-radius: 5px / 5px;
+	-o-border-radius: 5px / 5px;
+	-moz-border-radius: 5px / 5px;
+	-webkit-border-radius: 5px / 5px;
+	border-radius: 5px / 5px;
+	background:rgba(0,0,0,1);
+}
+
+#iconsax_linear_eye {
+	top: 319px;
+	left: 285px;
+	width: 24px;
+	height: 24px;
+}
+
+#vector {
+	top: 8.42px;
+	left: 8.42px;
+	width: 7.16px;
+	height: 7.16px;
+}
+
+
+#vector_ek1 {
+	top: 3.72px;
+	left: 2.22px;
+	width: 19.57px;
+	height: 16.55px;
+}
+
+
+
+/* Add your custom CSS here */
