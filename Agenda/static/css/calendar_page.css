@@ -971,11 +971,75 @@ div { position: absolute; }
 }
 
 #iconsax_linear_hambergermenu {
-	top: 23px;
-	left: 305px;
+	top: 14px;
+	left: 9px;
 	width: 48px;
-	height: 46px;
+	height: 60px;
 }
+
+/* The sidebar menu */
+.sidebar {
+	height: 67%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0;
+	left: 100;
+	background: rgba(197.62,193.78,193.78,1); /* Black*/
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+  
+  /* The sidebar links */
+  .sidebar a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+	color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+	font-size: 20px;
+	cursor: pointer;
+	background-color: #000000;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+  }
+  
+  .openbtn:hover {
+	background-color: #444;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+	transition: margin-left .5s; /* If you want a transition effect */
+	padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+	.sidebar {padding-top: 15px;}
+	.sidebar a {font-size: 18px;}
+  }
 
 #vector {
 	top: 13.42px;
@@ -987,7 +1051,7 @@ div { position: absolute; }
 
 #have_a_nice_day__bob {
 	top: 32px;
-	left: -18px;
+	left: 180px;
 	width: 217px;
 	height: 48px;
 	overflow: hidden;
@@ -1001,7 +1065,7 @@ div { position: absolute; }
 
 #rectangle_10_ek1 {
 	top: 24px;
-	left: 183px;
+	left: 176px;
 	width: 47px;
 	height: 40px;
 	border: 1px solid #000000;
@@ -1011,7 +1075,7 @@ div { position: absolute; }
 
 #line_5 {
 	top: 43px;
-	left: 176px;
+	left: 169px;
 	width: 58.47px;
 	height: 1px;
 	
@@ -1026,7 +1090,7 @@ div { position: absolute; }
 
 #line_6 {
 	top: 43px;
-	left: 176px;
+	left: 169px;
 	width: 58.9px;
 	height: 1px;
 	
@@ -1050,6 +1114,117 @@ div { position: absolute; }
 	font-weight: bold;
 	text-align: center;
 	line-height: 24px;
+	color:#000000;
+}
+
+#iconsax_linear_addcircle {
+	top: 505px;
+	left: 294px;
+	width: 59px;
+	height: 49px;
+}
+
+#vector_ek1 {
+	top: 4.08px;
+	left: 4.92px;
+	width: 49.17px;
+	height: 40.83px;
+}
+
+#group_35 {
+	top: 0px;
+	left: 115px;
+	width: 245px;
+	height: 640px;
+}
+
+#rectangle_12 {
+	top: 0px;
+	left: 0px;
+	width: 245px;
+	height: 640px;
+	background:rgba(255,255,255,1);
+}
+
+
+#rectangle_16 {
+	top: 150px;
+	left: 0px;
+	width: 245px;
+	height: 319px;
+	background:rgba(131,131,131,1);
+}
+
+
+#rectangle_13 {
+	top: 0px;
+	left: 0px;
+	width: 245px;
+	height: 93px;
+	background:rgba(217,217,217,1);
+}
+
+
+#menu {
+	top: 34px;
+	left: 64px;
+	width: 115px;
+	height: 50px;
+	overflow: hidden;
+	font-family: Space Grotesk;
+	font-size: 32px;
+	text-align: center;
+	line-height: 24px;
+	padding-top: 8px;
+	margin-top: -8px;
+	color:#000000;
+}
+
+
+#rectangle_14 {
+	top: 228px;
+	left: 49px;
+	width: 152px;
+	height: 35px;
+}
+
+
+#rectangle_15 {
+	top: 360px;
+	left: 46px;
+	width: 152px;
+	height: 35px;
+}
+
+
+#logout {
+	top: 365px;
+	left: 94px;
+	width: 61px;
+	height: 34px;
+	overflow: hidden;
+	font-family: Space Grotesk;
+	font-size: 14px;
+	text-align: center;
+	line-height: 24px;
+	margin-top: -3.3333333333333px;
+	height: 48px;
+	color:#000000;
+}
+
+
+#user_s_informations {
+	top: 232px;
+	left: 54px;
+	width: 144px;
+	height: 34px;
+	overflow: hidden;
+	font-family: Space Grotesk;
+	font-size: 14px;
+	text-align: center;
+	line-height: 24px;
+	margin-top: -3.3333333333333px;
+	height: 48px;
 	color:#000000;
 }
 

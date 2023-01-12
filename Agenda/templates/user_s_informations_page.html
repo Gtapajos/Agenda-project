@@ -31,42 +31,38 @@
 			<div id="personal_informations" >
 				Personal Informations
 			</div>
-			<div id="rectangle_5"  ></div>
-			<div id="rectangle_6"  ></div>
-			<div id="rectangle_7"  ></div>
-			<div id="rectangle_8"  ></div>
-			<div id="bob" >
-				Bob
-			</div>
-			<div id="bobmusician_gmail_com" >
-				<a href="mailto:bobmusician@gmail.com" target="_blank">bobmusician@gmail.com</a>
-			</div>
-			<div id="bob_dylan" >
-				Bob Dylan
-			</div>
-			<div id="rectangle_5_ek1"  ></div>
-			<div id="rectangle_9"  ></div>
-			<div id="update_data" >
-				Update data<br/>
-			</div>
-			<div id="delete_account" >
-				Delete account
-			</div>
+
+			<form action="/update_user" method="post">
+				<div id="rectangle_5"  >
+					<input id="full_name" name="full_name" style="border:none; background: transparent; outline: 0;" placeholder="Your full name">
+				</div>
+		
+				<div id="rectangle_6"  >
+					<input id="username" name="username" style="border:none; background: transparent; outline: 0;" placeholder="Your username">
+				</div>
+				<div id="rectangle_7"  >
+					<input id="email" name="email" style="border:none; background: transparent; outline: 0;" placeholder="Your email">
+				</div>
+				<div id="rectangle_8"  >
+					<input id="password" name="password" style="border:none; background: transparent; outline: 0;" placeholder="Your password">
+				</div>
+				<div id="rectangle_5_ek1"  >
+					<input type ="submit" id="update_data" name="update_data" value="Update data" style="border:none; background: transparent; outline: 0;">
+				</div>
+			    <div id="rectangle_9"  >
+					<a href="/delete_user" ><input type="submit" id="delete_account" name="delete_account" value="Delete data" style="border:none; background: transparent; outline: 0;"></a>
+				</div>
+			    
+			</form>
+
+			
 			<div id="arrow_3" >
-				<img src="skins/arrow_3.png" />
+				<a href="/back_calendar"> <img src="{{ url_for('static', filename='arrow_3.png') }}" /></a>
 			</div>
-			<img src="skins/arrow_3.png" id="arrow_3" />
-			<div id="ellipse_2"  ></div>
-			<div id="ellipse_3"  ></div>
-			<div id="ellipse_4"  ></div>
-			<div id="ellipse_5"  ></div>
-			<div id="ellipse_6"  ></div>
-			<div id="ellipse_7"  ></div>
-			<div id="ellipse_8"  ></div>
 
 			<div id="iconsax_linear_eye"  >
-				<img src="skins/vector.png" id="vector" />
-				<img src="skins/vector_ek1.png" id="vector_ek1" />
+				<img src="{{ url_for('static', filename='vector.png') }}" id="vector" />
+				<img src="{{ url_for('static', filename='vector_ek1.png') }}" id="vector_ek1" />
 			</div>
 
 		</div>

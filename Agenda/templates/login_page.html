@@ -33,25 +33,35 @@
 			<div id="line_1"  ></div>
 			<div id="agendly" >
 				Agendly
-				<py-script>
-					print("bom dia")
-				</py-script>
+				
 			</div>
 			<div id="the_agenda_made_for_everybody" >
 				The agenda made for everybody
 			</div>
-			<div id="rectangle_2" >
-					<input id="username" type="text" name="Username" style="border:none; background: transparent; outline: 0;" placeholder="Username">
-			</div>
-			<div id="rectangle_3"  >
-				<input id="password" type="text" name="Password" style="border:none; background: transparent; outline: 0;" placeholder="Password">
-			</div>
-			<div id="rectangle_4"  type>
-	               <a href="calendar_page.html"> <input type="button" id="sign_in" value="Sign in"></a>
-			</div>
+			{% block conteudo %}
+			<form action="/verify_login" method="post">
+				<div id="rectangle_2" >
+					<input id="username" type="text" name="username" style="border:none; background: transparent; outline: 0;" placeholder="Username">
+			    </div>
+
+			    <div id="rectangle_3" >
+				<input id="password" type="text" name="password" style="border:none; background: transparent; outline: 0;" placeholder="Password">
+				</div>
+				{% set mensagens = get_flashed_messages() %}
+				{% if mensagens %}
+				<div>{% for msg in mensagens %}
+						{{msg}} 
+					 {% endfor %}
+				</div>
+				{%endif %}
+				<div id="rectangle_4"  type>
+				   <a href="/initial_page"> <input type="submit" id="sign_in" value="Sign in"></a>
+				 </div>
+			</form>
+			{% endblock %}
 			<div id="don_t_you_have_an_account" >
 				<span style="font-style:normal; font-weight:normal; text-decoration:NONE; ">Don't you have an account?</span>
-				<a href="registering_page.html"> <input type="button" id="sign_up" value="Sign up" style="border:none; background: transparent; outline: 0;"></a>
+				<a href="/registering"> <input type="button" id="sign_up" value="Sign up" style="border:none; background: transparent; outline: 0;"></a>
 			</div>
 			</div>
 

@@ -21,6 +21,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="" >
 		<link rel="StyleSheet" href="../static/css/calendar_page.css" />
+		<script src="{{url_for('static', filename='calendar_page.js')}}"></script>
 		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
 		<!-- Add your custom HEAD content here -->
 
@@ -376,20 +377,30 @@
 					</div>
 
 				</div>
-				<div id="arrow_1"><img src="skins/arrow_1.png"/>
+				<div id="arrow_1"><img src="{{ url_for('static', filename='arrow_1.png') }}"/>
 				</div>
-				<div id="arrow_2"><img src="skins/arrow_2.png"/>
+				<div id="arrow_2"><img src="{{ url_for('static', filename='arrow_2.png') }}"/>
 				</div>
 
 			</div>
 			<div id="rectangle_10"  ></div>
 
 			<div id="iconsax_linear_hambergermenu"  >
-				<img src="skins/sandwich_menu.png" id="vector" />
+
+				<img class="openbtn" src="{{ url_for('static', filename='sandwich_menu.png') }}" id="vector" onclick="openNav()"/>
 
 			</div>
+
+			<div id="mySidebar" class="sidebar">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<a href="/user_info">User's informations</a>
+				<a href="/">Logout</a>
+			  </div>
+			  
+			  
+
 			<div id="have_a_nice_day__bob" >
-				Have a nice day, Bob
+				Have a nice day
 			</div>
 			<div id="rectangle_10_ek1"  ></div>
 			<div id="line_5"  ></div>
