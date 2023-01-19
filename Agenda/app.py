@@ -4,7 +4,10 @@ import sqlite3
 app = Flask(__name__, template_folder='templates')
 app.secret_key = "149205"
 
+connection = sqlite3.connect('agenda.db', check_same_thread=False)
+cursor = connection.cursor()
 
+id = 1
 
 @app.route("/")
 def Login():
@@ -28,7 +31,7 @@ def Back_calendar():
 
 @app.route("/verify_login", methods=["GET", "POST"])
 def Verify():
-   global user, password
+   global id
    connection = sqlite3.connect('agenda.db', check_same_thread=False)
    cursor = connection.cursor()
 
@@ -38,10 +41,9 @@ def Verify():
    valid = "False"
    if request.method == "POST":
        for dt in user_data_search:
-           print(dt)
-           if dt[1] == request.form['username'] and dt[3] == request.form['password']:
-               user = request.form['username']
-               password = request.form['password']
+           if type(dt) == int:
+               id = dt
+           if dt[2] == request.form['username'] and dt[4] == request.form['password']:
                valid = "True"
                break
 
@@ -61,24 +63,22 @@ def Signing():
    user_dt = []
    connection = sqlite3.connect('agenda.db', check_same_thread=False)
    cursor = connection.cursor()
+  
    if request.method == 'POST':
        user_dt.append(request.form['your_full_name'])
        user_dt.append(request.form['your_username'])
        user_dt.append(request.form['your_email'])
        user_dt.append(request.form['your_password'])
-       user_dt.append(request.form['confirm_your_password'])
+       confirmation = request.form['confirm_your_password']
        user_dt = tuple(user_dt)
 
-   if "" not in user_dt and user_dt[3] == user_dt[4]:
+   if "" not in user_dt and user_dt[3] == confirmation:
+        
         cursor.execute("insert into user_data(full_name, username,"
-           "email, password, confirmation) values(?, ?, ?, ?, ?)", user_dt)
+           "email, password) values(?, ?, ?, ?)", user_dt)
         connection.commit()
    else:
        flash("uncorrect data insertion")
-
-   cursor.execute("select * from user_data")
-   user_data_search = cursor.fetchall()
-   print(user_data_search)
 
    connection.close()
 
@@ -86,32 +86,30 @@ def Signing():
 
 @app.route("/update_user", methods=["GET", "POST"])
 def Update():
-   global user, password
-   print(user)
-   print(password)
+   global id
    user_dt = []
    connection = sqlite3.connect('agenda.db', check_same_thread=False)
    cursor = connection.cursor()
    if request.method == 'POST':
        user_dt.append(request.form['full_name'])
        if user_dt[0] != "":
-           cursor.execute(f"UPDATE user_data SET full_name = ? WHERE username = ? and password = ?",
-    (user_dt[0], user, password))
+           cursor.execute(f"UPDATE user_data SET full_name = ? WHERE id = ?",
+    (user_dt[0], id))
            
        user_dt.append(request.form['username'])
        if user_dt[1] != "":
-           cursor.execute(f"UPDATE user_data SET username = ? WHERE username = ? and password = ?",
-    (user_dt[1], user, password))
+           cursor.execute(f"UPDATE user_data SET username = ? WHERE id = ?",
+    (user_dt[1], id))
            
        user_dt.append(request.form['email'])
        if user_dt[2] != "":
-           cursor.execute(f"UPDATE user_data SET email = ? WHERE username = ? and password = ?",
-    (user_dt[2], user, password))
+           cursor.execute(f"UPDATE user_data SET email = ? WHERE id = ?",
+    (user_dt[2], id))
            
        user_dt.append(request.form['password'])
        if user_dt[3] != "":
-           cursor.execute(f"UPDATE user_data SET password = ? WHERE username = ? and password = ?",
-    (user_dt[3], user, password))
+           cursor.execute(f"UPDATE user_data SET password = ? WHERE id = ?",
+    (user_dt[3], id))
            
        user_dt = tuple(user_dt)
 
@@ -122,11 +120,15 @@ def Update():
 
 @app.route("/delete_user", methods=["GET", "POST"])
 def Delete():
-   global user, password
+   global id
+   print(id)
    connection = sqlite3.connect('agenda.db', check_same_thread=False)
    cursor = connection.cursor()
    if request.method == 'POST':
-       cursor.execute("Delete from user_data where username = ? and password = ?", (user, password))
+       cursor.execute("Delete from user_data where id = ?", str(id))
+
+   connection.commit()
+   connection.close()
 
    return redirect("/")
 
