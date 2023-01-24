@@ -4,8 +4,8 @@
  *	(Alt+Shift+Ctrl+I).
  *
  *	@desc 		
- *	@file 		calendar_page
- *	@date 		Sunday 08th of January 2023 02:23:00 AM
+ *	@file 		event_page
+ *	@date 		Tuesday 24th of January 2023 12:00:05 PM
  *	@title 		Page 1
  *	@author 	
  *	@keywords 	
@@ -17,18 +17,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
 	<head>
 		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
-		<title>calendar_page</title>
+		<title>event_page</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="" >
-		<link rel="StyleSheet" href="../static/css/calendar_page.css" />
-		<script src="{{url_for('static', filename='calendar_page.js')}}"></script>
+		<link rel="StyleSheet" href="event_page.css" />
 		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
 		<!-- Add your custom HEAD content here -->
 
 	</head>
 	<body>
 		<div id="content-container" >
-			<div id="_bg__calendar_page"  ></div>
+			<div id="_bg__event_page"  ></div>
 
 			<div id="group_33"  >
 
@@ -181,6 +180,7 @@
 								<div id="_7" >
 									7
 								</div>
+								<div id="rectangle_10"  ></div>
 
 							</div>
 
@@ -316,9 +316,9 @@
 							</div>
 
 							<div id="frame_36"  >
-								<button onclick="openEvPanel()" id="_25" >
+								<div id="_25" >
 									25
-								</button>
+								</div>
 
 							</div>
 
@@ -377,44 +377,29 @@
 					</div>
 
 				</div>
-				<div id="arrow_1"><img src="{{ url_for('static', filename='arrow_1.png') }}"/>
-				</div>
-				<div id="arrow_2"><img src="{{ url_for('static', filename='arrow_2.png') }}"/>
-				</div>
+				<img src="skins/arrow_1.png" id="arrow_1" />
+				<img src="skins/arrow_2.png" id="arrow_2" />
 
-			</div>
-			<div id="rectangle_10"  ></div>
-
-			<div id="iconsax_linear_hambergermenu"  >
-
-				<img class="openbtn" src="{{ url_for('static', filename='sandwich_menu.png') }}" id="vector" onclick="openNav()"/>
-
-			</div>
-
-			<div id="mySidebar" class="sidebar">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				<a href="/user_info">User's informations</a>
-				<a href="/">Logout</a>
-			  </div>
-			  
-			  
-
-			<div id="have_a_nice_day__bob" >
-				Have a nice day
 			</div>
 			<div id="rectangle_10_ek1"  ></div>
+
+			<div id="iconsax_linear_hambergermenu"  >
+				<img src="skins/vector.png" id="vector" />
+
+			</div>
+			<div id="have_a_nice_day__bob" >
+				Have a nice day, Bob
+			</div>
+			<div id="rectangle_10_ek2"  ></div>
 			<div id="line_5"  ></div>
 			<div id="line_6"  ></div>
 			<div id="monday_december__19th" >
 				Monday<br/>December, 19th
 			</div>
 
-			<div id="group_34" >
+			<div id="group_34"  >
 				<div id="rectangle_11"  ></div>
-				<div id="close_panel">
-					<img src="{{ url_for('static', filename='arrow_2.png') }}"/>
-				</div>
-				<div id="_25_saturday" onclick="closeEvPanel()">
+				<div id="_25_saturday" >
 					25<br/>Saturday
 				</div>
 				<div id="line_7"  ></div>
@@ -431,28 +416,27 @@
 				</div>
 
 				<div id="iconsax_linear_arrowrotateright"  >
-					<img src="{{ url_for('static', filename='vector_ek4.png') }}" id="vector_ek4" />
+					<img src="skins/vector_ek1.png" id="vector_ek1" />
 
 				</div>
 				<div id="update" >
 					Update
 				</div>
-				<div id="add_new_event" >
-					Add new event
-				</div>
-	
-				<div id="iconsax_linear_addcircle"  >
-					<img src="{{ url_for('static', filename='vector_ek2.png') }}" id="vector_ek2" />
-	
-				</div>
-	
-				<div id="iconsax_linear_minuscirlce"  >
-					<img src="{{ url_for('static', filename='vector_ek3.png') }}" id="vector_ek3" />
-	
-				</div>
 
 			</div>
-			
+			<div id="add_new_event" >
+				Add new event
+			</div>
+
+			<div id="iconsax_linear_addcircle"  >
+				<img src="skins/vector_ek2.png" id="vector_ek2" />
+
+			</div>
+
+			<div id="iconsax_linear_minuscirlce"  >
+				<img src="skins/vector_ek3.png" id="vector_ek3" />
+
+			</div>
 
 		</div>
 	</body>

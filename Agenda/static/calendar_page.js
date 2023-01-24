@@ -13,3 +13,12 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
+
+function openEvPanel() {
+  document.getElementById("group_34").style.display = 'block';
+}
+
+function closeEvPanel() {
+  console.log("Clicou na seta");
+  document.getElementById("group_34").style.display = 'none';
+}
