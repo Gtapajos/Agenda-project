@@ -1428,6 +1428,88 @@ div { position: absolute; }
     max-height: 70%;
 }
 
+#add_event_title {
+	top: 490px;
+	position: fixed;
+	width: 277px;
+	left: 50;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#3E3D3D;
+}
 
+#add_event_description {
+	top: 520px;
+	position: fixed;
+	width: 277px;
+	left: 50;
+	height: 39px;
+	overflow: hidden;
+	font-family: Hi Melody;
+	font-size: 20px;
+	text-align: center;
+	color:#3E3D3D;
+}
 
-/* Add your custom CSS here */
+#New_event {
+	top: 470px;
+	left: 10px;
+	width: 255px;
+	height: 55px;
+	overflow: hidden;
+	font-family: Space Grotesk;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 24px;
+	color:#000000;
+}
+
+#Date_picker {
+	top: 550px;
+	left: 13px;
+	width: 255px;
+	height: 55px;
+	overflow: hidden;
+	font-family: Space Grotesk;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 24px;
+	color:#000000;
+}
+
+#button_add {
+	top: 580px;
+	position:fixed;
+	left: 720px;
+	width: 80px;
+	height: 20px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	font-size: 10px;
+	color:#f1f1f1;
+	background:rgb(255, 255, 255);
+}
+
+#button_delete {
+	top: 580px;
+	position:fixed;
+	left: 820px;
+	width: 80px;
+	height: 20px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	font-size: 10px;
+	color:#f1f1f1;
+	background:rgb(255, 255, 255);
+}

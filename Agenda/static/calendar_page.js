@@ -22,3 +22,8 @@ function closeEvPanel() {
   console.log("Clicou na seta");
   document.getElementById("group_34").style.display = 'none';
 }
+
+$input = $("#my-input");
+$input.datepicker();
+$input.data('datepicker').hide = function () {};
+$input.datepicker('show');

@@ -1,13 +1,47 @@
 from flask import Flask, render_template, request, flash, redirect
-import sqlite3
+from flask_mysqldb import MySQL
 
 app = Flask(__name__, template_folder='templates')
 app.secret_key = "149205"
 
-connection = sqlite3.connect('agenda.db', check_same_thread=False)
-cursor = connection.cursor()
+app.config['MYSQL_HOST'] = '127.0.0.1'
+app.config['MYSQL_USER'] = 'mps'
+app.config['MYSQL_PASSWORD'] = 'Arabicoffee1006'
+app.config['MYSQL_DB'] = 'mydb'
+
+mysql = MySQL(app)
 
 id = 1
+status = 0
+name = ""
+username = ""
+email= ""
+password = ""
+
+
+def set_id(idi):
+    global id
+    id = idi
+
+def set_name(nam):
+    global name
+    name = nam
+
+def set_status(st):
+    global status
+    status = st
+
+def set_username(unam):
+    global username
+    username = unam
+
+def set_email(eml):
+    global email
+    email = eml
+
+def set_password(psswd):
+    global password
+    password = psswd
 
 @app.route("/")
 def Login():
@@ -19,6 +53,11 @@ def Registering():
 
 @app.route("/back_login")
 def Back_lgpage():
+     global id
+     cursor = mysql.connection.cursor()
+     cursor.execute(f"UPDATE agenda_usuario SET usuario_status = %s WHERE usuario_id = %s", (0, id))
+     mysql.connection.commit()
+     cursor.close()
      return render_template("login_page.html")
 
 @app.route("/user_info")
@@ -32,22 +71,29 @@ def Back_calendar():
 @app.route("/verify_login", methods=["GET", "POST"])
 def Verify():
    global id
-   connection = sqlite3.connect('agenda.db', check_same_thread=False)
-   cursor = connection.cursor()
+   cursor = mysql.connection.cursor()
+   cursor.execute("SELECT * FROM agenda_usuario")
 
-   cursor.execute("select * from user_data")
-   user_data_search = cursor.fetchall()
+   agenda_usuario = cursor.fetchall()
    
    valid = "False"
    if request.method == "POST":
-       for dt in user_data_search:
-           if type(dt) == int:
-               id = dt
-           if dt[2] == request.form['username'] and dt[4] == request.form['password']:
+       for dt in agenda_usuario:
+           print(dt)
+           if dt[5] == request.form['username'] and dt[4] == request.form['password']:
+               set_id(dt[0])
+               set_name(dt[1])
+               set_email(dt[2])
+               set_status(dt[3])
+               set_password(dt[4])
+               set_username(dt[5])
                valid = "True"
+               cursor.execute(f"UPDATE agenda_usuario SET usuario_status = %s WHERE usuario_id = %s", (1, id))
                break
-
-   return Initial_page(valid)
+   
+   mysql.connection.commit()
+   cursor.close()
+   return (Initial_page(valid))
 
 @app.route("/initial_page")
 def Initial_page(val):
@@ -61,76 +107,102 @@ def Initial_page(val):
 @app.route("/add_user", methods=["GET", "POST"])
 def Signing():
    user_dt = []
-   connection = sqlite3.connect('agenda.db', check_same_thread=False)
-   cursor = connection.cursor()
+   cursor = mysql.connection.cursor()
   
    if request.method == 'POST':
        user_dt.append(request.form['your_full_name'])
-       user_dt.append(request.form['your_username'])
        user_dt.append(request.form['your_email'])
+       user_dt.append(0)
        user_dt.append(request.form['your_password'])
+       user_dt.append(request.form['your_username'])
        confirmation = request.form['confirm_your_password']
        user_dt = tuple(user_dt)
 
-   if "" not in user_dt and user_dt[3] == confirmation:
-        
-        cursor.execute("insert into user_data(full_name, username,"
-           "email, password) values(?, ?, ?, ?)", user_dt)
-        connection.commit()
+       if "" not in user_dt and user_dt[3] == confirmation:
+            cursor.execute("insert into agenda_usuario(usuario_nome, usuario_email,"
+               "usuario_status, usuario_senha, usuario_nome_user) values(%s, %s, %s, %s, %s)", user_dt)
    else:
        flash("uncorrect data insertion")
 
-   connection.close()
+   mysql.connection.commit()
+   cursor.close()
 
    return render_template("registering_page.html")
 
 @app.route("/update_user", methods=["GET", "POST"])
 def Update():
-   global id
+   print(f"O id é {id}")
    user_dt = []
-   connection = sqlite3.connect('agenda.db', check_same_thread=False)
-   cursor = connection.cursor()
+   cursor = mysql.connection.cursor()
+
    if request.method == 'POST':
        user_dt.append(request.form['full_name'])
        if user_dt[0] != "":
-           cursor.execute(f"UPDATE user_data SET full_name = ? WHERE id = ?",
+           cursor.execute(f"UPDATE agenda_usuario SET usuario_nome = %s WHERE usuario_id = %s",
     (user_dt[0], id))
            
        user_dt.append(request.form['username'])
        if user_dt[1] != "":
-           cursor.execute(f"UPDATE user_data SET username = ? WHERE id = ?",
+           cursor.execute(f"UPDATE agenda_usuario SET usuario_nome_user = %s WHERE usuario_id = %s",
     (user_dt[1], id))
            
        user_dt.append(request.form['email'])
        if user_dt[2] != "":
-           cursor.execute(f"UPDATE user_data SET email = ? WHERE id = ?",
+           cursor.execute(f"UPDATE agenda_usuario SET usuario_email = %s WHERE usuario_id = %s",
     (user_dt[2], id))
            
        user_dt.append(request.form['password'])
        if user_dt[3] != "":
-           cursor.execute(f"UPDATE user_data SET password = ? WHERE id = ?",
+           cursor.execute(f"UPDATE agenda_usuario SET usuario_senha = %s WHERE usuario_id = %s",
     (user_dt[3], id))
            
        user_dt = tuple(user_dt)
 
-   connection.commit()
+   mysql.connection.commit()
 
-   connection.close()
+   cursor.execute("SELECT * FROM agenda_usuario")
+
+   agenda_usuario = cursor.fetchall()
+
+   cursor.close()
    return redirect("/user_info")
 
-@app.route("/delete_user", methods=["GET", "POST"])
+@app.route("/delete_user", methods=["POST"])
 def Delete():
-   global id
-   print(id)
-   connection = sqlite3.connect('agenda.db', check_same_thread=False)
-   cursor = connection.cursor()
+   cursor = mysql.connection.cursor()
    if request.method == 'POST':
-       cursor.execute("Delete from user_data where id = ?", str(id))
+       cursor.execute(f"update agenda_usuario SET usuario_status = 2 where usuario_id='"+str(id)+"'")
 
-   connection.commit()
-   connection.close()
+   mysql.connection.commit()
+   cursor.close()
 
    return redirect("/")
+
+@app.route("/event", methods=["GET", "POST"])
+def Register_event():
+   event_dt = []
+   cursor = mysql.connection.cursor()
+  
+   if request.method == 'POST':
+       event_dt.append(request.form['Datetime'])
+       event_dt.append(request.form['add_event_description'])
+       event_dt.append(request.form['add_event_title'])
+       event_dt.append(1)
+       event_dt.append(id)
+       event_dt = tuple(event_dt)
+
+       if "" not in event_dt:
+            cursor.execute("insert into agenda_evento"
+                           "(evento_data, evento_descricao, evento_nome, evento_status, usuario_id) values(%s, %s, %s, %s, %s)", event_dt)
+       
+   else:
+       flash("uncorrect data insertion")
+
+   mysql.connection.commit()
+   cursor.close()
+
+   return render_template("calendar_page.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
